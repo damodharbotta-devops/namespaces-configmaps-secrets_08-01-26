@@ -30,3 +30,20 @@ kubens test ---> shift to test namespace
 kubens - ---> shift to previous name space
 
 
+### Configmaps:
+
+kubectl create cm cm1 --from-literal=name=mustafa --from-literal=company=flm --from-literal=place=hyderabad    ----> imperative way
+kunectl get cm
+kubectl describe cm cm1
+kubectl create -f configmap.yml
+kubectl create -f pod.yml
+kubectl exec -it pod -- bash
+printenv
+
+### secrets
+
+kubectl create secret generic mysecret --from-literal=username=mustafa --from-literal=password=admin@123   ---->imperativeway
+kubectl create -f pod-secret.yml
+kubectl get po
+kubectl exec -it pod -- bash
+printenv
